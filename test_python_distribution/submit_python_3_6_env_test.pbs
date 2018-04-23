@@ -1,0 +1,36 @@
+#!/bin/bash
+# author: Nikolas Schnellbaehcer
+# contact: khx0@posteo.net
+##########################################################################################
+# Specify the job name below
+#PBS -N test_python_3_6_env
+# Specify the cput time in the format hh:mm:ss
+#PBS -l cput=00:05:00
+# Specify the walltime in the format hh:mm:ss
+#PBS -l walltime=00:05:00
+# Specify the requested nodes, processors per node (ppn) and
+# further requirements (e.g. xeon)
+#PBS -l nodes=1:ppn=16:xeon
+# Join the output and error file.
+#PBS -j oe
+# Send an email in case of abort (a), begin (b), end (e)
+#PBS -m abe
+# Specify the email for user notification
+#PBS -M ### INSERT YOUR E-MAIL HERE ###
+
+cd $PBS_O_WORKDIR
+
+export PATH=/path/to/python3/dist/bin:$PATH
+
+echo 'date = '
+date
+echo 'hostname = '
+hostname
+
+python3 versions_python_3_6.py &> python_info_3_6.txt
+
+echo 'end date = '
+date
+echo 'lscpu'
+lscpu
+echo 'job completed normally'
