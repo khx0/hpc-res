@@ -1,6 +1,7 @@
 #!/bin/bash
 # author: Nikolas Schnellbaehcer
 # contact: khx0@posteo.net
+# using torque submission system
 ##########################################################################################
 # Specify the job name below
 #PBS -N test_python_3_6_env
@@ -10,7 +11,7 @@
 #PBS -l walltime=00:05:00
 # Specify the requested nodes, processors per node (ppn) and
 # further requirements (e.g. xeon)
-#PBS -l nodes=1:ppn=16:xeon
+#PBS -l nodes=1:ppn=1:xeon
 # Join the output and error file.
 #PBS -j oe
 # Send an email in case of abort (a), begin (b), end (e)
