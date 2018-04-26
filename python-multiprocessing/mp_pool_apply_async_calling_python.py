@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 ##########################################################################################
 # author: Nikolas Schnellbaecher
-# contact: nikolas.schnellbaecher@bioquant.uni-heidelberg.de
+# contact: khx0@posteo.net
 # date: 2018-04-26
 # file: mp_pool_apply_async_calling_python.py
 ##########################################################################################
