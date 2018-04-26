@@ -1,0 +1,15 @@
+#!/bin/bash
+# author: Nikolas Schnellbaehcer
+# contact: khx0@posteo.net
+# file: submission-template-minimal.pbs
+# Minimal PBS submission script template
+# This will effectively use all the cluster's default settings, since no specific
+# requirements are specified.
+##########################################################################################
+
+cd $PBS_O_WORKDIR
+
+##############
+# DO WORK HERE
+##############
+

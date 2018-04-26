@@ -1,0 +1,45 @@
+#!/bin/bash
+# author: Nikolas Schnellbaehcer
+# contact: khx0@posteo.net
+# file: submission-template.pbs
+# PBS submission script template
+##########################################################################################
+# Specify the job name below
+#PBS -N JOBNAME
+# Specify the cput time in the format hh:mm:ss
+#PBS -l cput=00:05:00
+# Specify the walltime in the format hh:mm:ss
+#PBS -l walltime=00:05:00
+# Specify the requested nodes, processors per node (ppn) and
+# further requirements (e.g. xeon)
+#PBS -l nodes=1:ppn=1:xeon
+# Join the output and error file.
+#PBS -j oe
+# Send an email in case of abort (a), begin (b), end (e)
+#PBS -m abe
+# Specify the email for user notification
+#PBS -M ### YOUR EMAIL HERE ###
+
+# If you wish to request a specific node you can do so by adding:
+# # PBS -l nodes=cln130-int
+# which requests cluster node 130, which here is an Intel machine (= int).
+# All available nodes can be listed by typing the command: $pbsnodes
+# in the prompt of a cluster login node.
+
+cd $PBS_O_WORKDIR
+
+echo 'date = '
+date
+echo 'hostname = '
+hostname
+
+##############
+# DO WORK HERE
+##############
+
+echo 'end date = '
+date
+echo 'lscpu'
+lscpu
+echo 'job completed normally'
+
