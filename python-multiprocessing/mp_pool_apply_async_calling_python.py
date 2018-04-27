@@ -7,6 +7,18 @@
 # file: mp_pool_apply_async_calling_python.py
 ##########################################################################################
 
+'''
+Uses the pool cass from python's multiprocessing library to asychronously
+spawn independent worker threads. This is applicable for any
+batch process which is naively parallelizable.
+You need to modify the workerThread function to do the actual work, or use it
+as a wrapper function to call your worker function.
+If each worker thread writes its independent output you do not need the
+return statements. If you want to postprocess your results within
+this script, make sure that the i/o from the spawned threads to this master program
+works as you intend it to do.
+'''
+
 import time
 import datetime
 import os
