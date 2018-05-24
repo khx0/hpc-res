@@ -28,6 +28,9 @@
 
 cd $PBS_O_WORKDIR
 
+# set environment variables if necessary, e.g.:
+# export PATH = /path/to/some/binaries/bin/:$PATH
+
 echo 'date = '
 date
 echo 'hostname = '
